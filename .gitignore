@@ -1,0 +1,9 @@
+cmake-build-*/
+.idea/
+*.user
+*.userprefs
+*.o
+*.obj
+*.exe
+*.out
+.DS_Store
