@@ -7,3 +7,5 @@ cmake-build-*/
 *.exe
 *.out
 .DS_Store
+.vs/
+out/
