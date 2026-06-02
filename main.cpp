@@ -157,8 +157,8 @@ int main(int argc, char* args[])
 				SDL_Rect stretchRect;
 				stretchRect.x = 0;
 				stretchRect.y = 0;
-				stretchRect.w = SCREEN_WIDTH;
-				stretchRect.h = SCREEN_HEIGHT;
+				stretchRect.w = SCREEN_WIDTH / 2;
+				stretchRect.h = SCREEN_HEIGHT / 2;
 				SDL_BlitScaled(gStretchedSurface, NULL, gScreenSurface, &stretchRect);
 
 				//Update the surface
