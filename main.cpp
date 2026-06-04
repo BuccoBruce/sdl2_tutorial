@@ -92,7 +92,8 @@ bool loadMedia()
 	bool success = true;
 
 	//Load PNG texture
-	gTexture = loadTexture("07_texture_loading_and_rendering/texture.png");
+	//gTexture = loadTexture("07_texture_loading_and_rendering/texture.png");
+	gTexture = IMG_LoadTexture(gRenderer, "07_texture_loading_and_rendering/texture.png");
 	if (gTexture == NULL)
 	{
 		printf("Failed to load texture image!\n");
@@ -119,32 +120,32 @@ void close()
 	SDL_Quit();
 }
 
-SDL_Texture* loadTexture(std::string path)
-{
-	//The final texture
-	SDL_Texture* newTexture = NULL;
-
-	//Load image at specified path
-	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
-	if (loadedSurface == NULL)
-	{
-		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
-	}
-	else
-	{
-		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
-		if (newTexture == NULL)
-		{
-			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
-		}
-
-		//Get rid of old loaded surface
-		SDL_FreeSurface(loadedSurface);
-	}
-
-	return newTexture;
-}
+//SDL_Texture* loadTexture(std::string path)
+//{
+//	//The final texture
+//	SDL_Texture* newTexture = NULL;
+//
+//	//Load image at specified path
+//	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
+//	if (loadedSurface == NULL)
+//	{
+//		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
+//	}
+//	else
+//	{
+//		//Create texture from surface pixels
+//		newTexture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
+//		if (newTexture == NULL)
+//		{
+//			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+//		}
+//
+//		//Get rid of old loaded surface
+//		SDL_FreeSurface(loadedSurface);
+//	}
+//
+//	return newTexture;
+//}
 
 int main(int argc, char* args[])
 {
