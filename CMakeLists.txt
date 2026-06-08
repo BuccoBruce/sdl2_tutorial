@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(SDL2 REQUIRED CONFIG)
 find_package(SDL2_image REQUIRED CONFIG)
+find_package(SDL2_ttf REQUIRED CONFIG)
 
 get_property(allTargets DIRECTORY PROPERTY IMPORTED_TARGETS)
 message(STATUS "Imported targets: ${allTargets}")
@@ -17,6 +18,7 @@ target_link_libraries(
     PRIVATE
     SDL2::SDL2 
     SDL2_image::SDL2_image
+    SDL2_ttf::SDL2_ttf
 )
 
 if(TARGET SDL2::SDL2main)
